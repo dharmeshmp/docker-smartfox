@@ -2,7 +2,7 @@
 FROM openjdk:8-alpine
 
 ENV SFS_VERSION 2_18_0
-ENV SFS_PATCH 2.18.2
+ENV SFS_PATCH 2.18.3
 
 RUN wget -q -O - https://www.smartfoxserver.com/downloads/sfs2x/SFS2X_unix_${SFS_VERSION}.tar.gz | tar  -C /opt -xzvf - \
     # Swap out the java included with SFS with distro java
