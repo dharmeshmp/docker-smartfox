@@ -1,6 +1,7 @@
 # Using openjdk as base image to support ARM builds
 # FROM --platform=linux/arm64 openjdk:8-alpine
-FROM openjdk:8-alpine
+# FROM openjdk:8-alpine
+FROM eclipse-temurin:8-jdk-ubi9-minimal
 
 ENV SFS_VERSION 2_19_0
 ENV SFS_PATCH 2.19.1
