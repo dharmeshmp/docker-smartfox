@@ -1,5 +1,6 @@
 # Using openjdk as base image to support ARM builds
-FROM --platform=linux/arm64 openjdk:8-alpine
+# FROM --platform=linux/arm64 openjdk:8-alpine
+FROM openjdk:8-alpine
 
 ENV SFS_VERSION 2_19_0
 ENV SFS_PATCH 2.19.1
@@ -30,7 +31,7 @@ RUN wget -q https://www.smartfoxserver.com/downloads/sfs2x/patches/SFS2X-Patch-$
     && pwd \
     && ls -al \
     && /usr/lib/jvm/default-jvm/jre/bin/java -version \
-    # && ./install-linux.sh \
+    && ./install-linux.sh \
     && echo "Executed install-linux.sh" \
     && cd .. \
     && echo "Changed back to the previous directory" \
