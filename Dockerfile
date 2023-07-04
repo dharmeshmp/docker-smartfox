@@ -1,6 +1,6 @@
 # Using openjdk as base image to support ARM builds
 # FROM --platform=linux/arm64 openjdk:8-alpine
-FROM --platform=linux/amd64 openjdk:8-alpine
+FROM --platform=linux/amd64 amazoncorretto:8-alpine
 # FROM openjdk:8-alpine
 # FROM adoptopenjdk:8-jdk-hotspot-bionic
 
