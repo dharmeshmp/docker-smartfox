@@ -24,6 +24,7 @@ RUN wget -q https://www.smartfoxserver.com/downloads/sfs2x/patches/SFS2X-Patch-$
     && unzip SFS2X-Patch-${SFS_PATCH}.zip \
     && echo "Extracted the ZIP file" \
     && pwd \
+    && ls -al \
     && cd SFS2X-Patch-${SFS_PATCH} \
     && echo "Changed directory to SFS2X-Patch-${SFS_PATCH}" \
     && pwd \
