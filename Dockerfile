@@ -1,5 +1,5 @@
 # Using openjdk as base image to support ARM builds
-FROM --platform=linux/amd64,linux/arm64/v8 openjdk:8-alpine
+FROM --platform=linux/arm64 openjdk:8-alpine
 
 ENV SFS_VERSION 2_19_0
 ENV SFS_PATCH 2.18.4
