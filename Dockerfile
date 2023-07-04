@@ -29,7 +29,7 @@ RUN wget -q https://www.smartfoxserver.com/downloads/sfs2x/patches/SFS2X-Patch-$
     && echo "Changed directory to SFS2X-Patch-${SFS_PATCH}" \
     && pwd \
     && ls -al ../jre/bin/java \
-    && /usr/lib/jvm/default-jvm/jre/bin/java -jar patcher.jar "Overcast SFS2X 2.19.1 Patch Installer" $1
+    && /usr/lib/jvm/default-jvm/jre/bin/java -jar patcher.jar "Overcast SFS2X 2.19.1 Patch Installer" \
     # && ./install-linux.sh \
     && echo "Executed install-linux.sh" \
     && cd .. \
