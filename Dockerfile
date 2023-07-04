@@ -12,12 +12,26 @@ RUN wget -q -O - https://www.smartfoxserver.com/downloads/sfs2x/SFS2X_unix_${SFS
 
 WORKDIR /opt/SmartFoxServer_2X
 
+# RUN wget -q https://www.smartfoxserver.com/downloads/sfs2x/patches/SFS2X-Patch-${SFS_PATCH}.zip \
+#     && unzip SFS2X-Patch-${SFS_PATCH}.zip \
+#     && cd SFS2X-Patch-${SFS_PATCH} \
+#     && ./install-linux.sh \
+#     && cd .. \
+#     && rm -rf SFS2X-Patch-${SFS_UPDATE}.zip SFS2X-Patch-${SFS_PATCH}
+
 RUN wget -q https://www.smartfoxserver.com/downloads/sfs2x/patches/SFS2X-Patch-${SFS_PATCH}.zip \
+    && echo "Downloaded the ZIP file" \
     && unzip SFS2X-Patch-${SFS_PATCH}.zip \
+    && echo "Extracted the ZIP file" \
     && cd SFS2X-Patch-${SFS_PATCH} \
+    && echo "Changed directory to SFS2X-Patch-${SFS_PATCH}" \
     && ./install-linux.sh \
+    && echo "Executed install-linux.sh" \
     && cd .. \
-    && rm -rf SFS2X-Patch-${SFS_UPDATE}.zip SFS2X-Patch-${SFS_PATCH}
+    && echo "Changed back to the previous directory" \
+    && rm -rf SFS2X-Patch-${SFS_UPDATE}.zip SFS2X-Patch-${SFS_PATCH} \
+    && echo "Removed the ZIP file and extracted folder"
+
 
 EXPOSE 8080 8443 9933 5000
 
