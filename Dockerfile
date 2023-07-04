@@ -1,7 +1,7 @@
 # Using openjdk as base image to support ARM builds
 # FROM --platform=linux/arm64 openjdk:8-alpine
-# FROM openjdk:8-alpine
-FROM adoptopenjdk:8-jdk-hotspot-bionic
+FROM openjdk:8-alpine
+# FROM adoptopenjdk:8-jdk-hotspot-bionic
 
 ENV SFS_VERSION 2_19_0
 ENV SFS_PATCH 2.19.1
