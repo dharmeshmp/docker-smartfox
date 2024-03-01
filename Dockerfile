@@ -20,7 +20,7 @@ RUN wget -q https://www.smartfoxserver.com/downloads/sfs2x/patches/SFS2X-Patch-$
     && cd .. \
     && rm -rf SFS2X-Patch-${SFS_UPDATE}.zip SFS2X-Patch-${SFS_PATCH}
 
-EXPOSE 8080 8443 9933 5000
+EXPOSE 8080 8443 9933 9933/udp 5000
 
 WORKDIR /opt/SmartFoxServer_2X/SFS2X
 
