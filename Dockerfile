@@ -1,6 +1,6 @@
 # Using openjdk as base image to support ARM builds
 # FROM openjdk:8-alpine
-FROM --platform=linux/amd64 amazoncorretto:8-alpine
+FROM --platform=linux/amd64 amazoncorretto:11-alpine
 
 ENV SFS_VERSION 2_19_0
 ENV SFS_PATCH 2.19.3
@@ -24,4 +24,5 @@ EXPOSE 8080 8443 9933 9933/udp 5000
 
 WORKDIR /opt/SmartFoxServer_2X/SFS2X
 
-CMD ["sh", "sfs2x.sh"]
+# CMD ["sh", "sfs2x.sh"]
+CMD ["/opt/SmartFoxServer_2X/SFS2X/sfs2x-service", "run"]
