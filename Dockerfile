@@ -22,7 +22,7 @@ WORKDIR /opt/SmartFoxServer_2X
 RUN wget -q https://www.smartfoxserver.com/downloads/sfs2x/patches/SFS2X-Patch-${SFS_PATCH}.zip \
     && unzip SFS2X-Patch-${SFS_PATCH}.zip \
     && cd SFS2X-Patch-${SFS_PATCH} \
-    && bash ./install-linux.sh \
+    && ./install-linux.sh \
     && cd .. \
     && rm -rf SFS2X-Patch-${SFS_UPDATE}.zip SFS2X-Patch-${SFS_PATCH}
 
