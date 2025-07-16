@@ -26,5 +26,7 @@ RUN wget -q https://www.smartfoxserver.com/downloads/sfs2x/patches/SFS2X-Patch-$
 
 EXPOSE 8080 8443 9933 9933/udp 5000
 
+WORKDIR /opt/SmartFoxServer_2X/SFS2X
+
 # CMD ["sh", "sfs2x.sh"]
 CMD ["/opt/SmartFoxServer_2X/SFS2X/sfs2x-service", "run"]
