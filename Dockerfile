@@ -6,6 +6,9 @@ FROM bellsoft/liberica-openjdk-alpine:11
 ENV SFS_VERSION 2_19_0
 ENV SFS_PATCH 2.20.3
 
+# Install required utilities
+RUN apk add --no-cache bash unzip wget
+
 RUN wget -q -O - https://www.smartfoxserver.com/downloads/sfs2x/SFS2X_unix_${SFS_VERSION}.tar.gz | tar  -C /opt -xzvf - \
     # Swap out the java included with SFS with distro java
     # This allows for ARM builds.
