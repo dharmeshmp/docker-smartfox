@@ -7,13 +7,15 @@ ENV SFS_VERSION 2_19_0
 ENV SFS_PATCH 2.20.3
 
 # Install required utilities
-RUN apk add --no-cache bash unzip wget
+RUN apk add --no-cache bash unzip wget coreutils
 
 RUN wget -q -O - https://www.smartfoxserver.com/downloads/sfs2x/SFS2X_unix_${SFS_VERSION}.tar.gz | tar  -C /opt -xzvf - \
     # Swap out the java included with SFS with distro java
     # This allows for ARM builds.
-    && rm -rf /opt/SmartFoxServer_2X/jre \
-    && ln -s /usr/lib/jvm/default-jvm/jre /opt/SmartFoxServer_2X/jre
+    rm -rf /opt/SmartFoxServer_2X/jre \
+    && REAL_JAVA=$(readlink -f $(which java)) \
+    && ln -s "$REAL_JAVA" /opt/SmartFoxServer_2X/jre/bin/java
+
 
 WORKDIR /opt/SmartFoxServer_2X
 
