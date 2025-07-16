@@ -20,13 +20,11 @@ WORKDIR /opt/SmartFoxServer_2X
 RUN wget -q https://www.smartfoxserver.com/downloads/sfs2x/patches/SFS2X-Patch-${SFS_PATCH}.zip \
     && unzip SFS2X-Patch-${SFS_PATCH}.zip \
     && cd SFS2X-Patch-${SFS_PATCH} \
-    && ./install-linux.sh \
+    && bash ./install-linux.sh \
     && cd .. \
     && rm -rf SFS2X-Patch-${SFS_UPDATE}.zip SFS2X-Patch-${SFS_PATCH}
 
 EXPOSE 8080 8443 9933 9933/udp 5000
-
-WORKDIR /opt/SmartFoxServer_2X/SFS2X
 
 # CMD ["sh", "sfs2x.sh"]
 CMD ["/opt/SmartFoxServer_2X/SFS2X/sfs2x-service", "run"]
